@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  web:
+    build: .              # Specify the build context directory for the web service
+    ports:
+      - "5001:5000"               # Map port 5000 inside the container to port 5001 on the host machine
+    volumes:
+      - .:/flask_app
+  redis:
+    image: redis           # Use the "redis-alpine" image from Docker Hub
+
